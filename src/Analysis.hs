@@ -2,8 +2,8 @@ module Analysis where
 
 ------------------------differential important-----------------
 -- differ ort
-differ :: ( Double -> Double ) -> Double -> Double -> Double
-differ f step x = ( f ( x + step ) - f x ) / step
+differ :: Double -> ( Double -> Double ) -> Double -> Double
+differ step f x = ( f ( x + step ) - f x ) / step
 -- f' with step 0.00001 equal to differ f 0.00001
 
 -- integration

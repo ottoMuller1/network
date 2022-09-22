@@ -83,3 +83,13 @@ widthPN ( Only ( Alg.Vector vector ) ) = length vector
 widthPN ( Alg.Ev :--> ( _ :==> pn ) ) = max 1 ( widthPN pn )
 widthPN ( Alg.ZeroVector :--> ( _ :==> pn ) ) = max 1 ( widthPN pn )
 widthPN ( Alg.Vector vector :--> ( _ :==> pn ) ) = max ( length vector ) ( widthPN pn )
+
+-- back propogation
+{-
+type Await = Double
+type Result = Double
+educationPNSimple :: Double -> ( Await -> Result -> Double ) -> PerceptronNetwork -> PerceptronNetwork
+educationPNSimple step wrong pn =
+    let d'dx = Anl.differ step
+    in pn
+-}
