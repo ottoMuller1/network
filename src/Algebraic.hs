@@ -128,7 +128,7 @@ instance ( Ring a, Eq a ) => Action ( Vector a ) ( Matrix a ) where
         | allSame $ ( \( Vector column ) -> length column ) <$> columns =
             Matrix $ ( \(Vector column) -> Vector [ mconcat column ] ) <$> columns
         | otherwise = error "unequal columns"
-    v @ ( Vector vector ) <:> Matrix columns
+    v@( Vector vector ) <:> Matrix columns
         | and $ ( == length vector ) <$>
             ( ( \( Vector column ) -> length column ) <$> columns ) = 
                 Matrix $ ( \column -> Vector [ scale v column ] ) <$> columns

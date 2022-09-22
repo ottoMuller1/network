@@ -48,15 +48,15 @@ instance Show ( Perceptron SynapseLayer ) where
 
 instance Semigroup PerceptronNetwork where
     (<>) :: PerceptronNetwork -> PerceptronNetwork -> PerceptronNetwork
-    left @ ( Only a ) <> ( Only b )
+    left@( Only a ) <> ( Only b )
         | a == b = a :--> ( Alg.E :==> Only b )
         | otherwise = left
-    left @ ( Only a ) <> right @ ( a' :--> sl )
+    left@( Only a ) <> right@( a' :--> sl )
         | a == a' = right
         | otherwise = left
-    ( a :--> ( b :==> c ) ) <> right @ ( Only с' ) =
+    ( a :--> ( b :==> c ) ) <> right@( Only с' ) =
         a :--> ( b :==> ( c <> right ) )
-    ( a :--> ( b :==> c ) ) <> right @ ( a' :--> c' ) =
+    ( a :--> ( b :==> c ) ) <> right@( a' :--> c' ) =
         a :--> ( b :==> ( c <> right ) )
 
 ------------------------------features---------------------------------------------

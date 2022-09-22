@@ -1,5 +1,5 @@
 .stack-work/
 CHANGELOG.md
 LICENSE
-app
-*~
+test/
+app/
