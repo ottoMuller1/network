@@ -14,7 +14,7 @@ data Matrix a = Matrix [ Vector a ] | ZeroMatrix | E deriving ( Show, Eq ) -- co
 ----------------------------important--------------------------------
 allSame :: Eq a => [ a ] -> Bool
 allSame [] = True
-allSame [ x ] = True
+allSame [ x ] = True 
 allSame ( x : x' : xs ) = ( x == x' ) && allSame xs
 
 --------------------------features-----------------------------------
